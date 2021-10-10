@@ -1,0 +1,27 @@
+{
+  "name": "cy-ts",
+  "version": "1.0.0",
+  "keywords": [
+    "cypress"
+  ],
+  "author": "Getulio Gasparotto Dadald",
+  "description": "E2E Test automation framework",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "lint": "eslint . --ext .ts,.js"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "cypress": "^8.5.0",
+    "typescript": "^4.4.3"
+  },
+  "devDependencies": {
+    "cypress-terminal-report": "^3.3.3",
+    "eslint": "^7.32.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-react": "^7.26.1"
+  }
+}

@@ -1,0 +1,9 @@
+# Node
+node_modules/
+
+# Cypress tests output
+cypress/videos
+cypress/screenshots
+
+# VS Code config
+.vscode/settings.json
