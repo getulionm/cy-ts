@@ -4,8 +4,9 @@ describe('Table row tests', () => {
 
   it('Counts number of table rows', () => {
     tableRowPage.visit()
-    tableRowPage.technicalSummarySectionTable.should('be.visible')
-    tableRowPage.technicalSummarySectionTable
+    tableRowPage.technicalSummaryTable.should('be.visible')
+
+    tableRowPage.technicalSummaryTable
       .find('tr')
       .should('have.length', 7)
       .then(tableRows => {

@@ -1,13 +1,19 @@
 class TableRowPage {
   url: string = Cypress.config().baseUrl + '/en-US/docs/Web/HTML/Element/tr';
 
-  get technicalSummarySection(): Cypress.Chainable<JQuery<HTMLElement>> { return cy.get('#technical_summary'); }
-  get technicalSummarySectionTable(): Cypress.Chainable<JQuery<HTMLElement>> { return this.technicalSummarySection.nextUntil('.table-container').first(); }
+  // Finds the "Technical summary" page header
+  get technicalSummaryHeader() {
+    return cy.get('#technical_summary');
+  }
+  // Finds the "Technical summary" table, using a sibling selector
+  get technicalSummaryTable() {
+    return this.technicalSummaryHeader.nextUntil('table').first();
+  }
 
   /**
    * Navigates to the Table Row page
    */
-  visit(): void { cy.visit(this.url); }
+  visit() { cy.visit(this.url); }
 
 }
 

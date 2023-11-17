@@ -1,18 +1,22 @@
 describe('Tests "Featured articles" section links', () => {
-  const TEST_SUITE = [];
+  const TEST_SUITE = new Set();
+  const EXPECTED_ARTICLES = 6
 
   beforeEach('Setup: Finds "Featured articles" links', () => {
     cy.visit('/');
 
-    cy.get('.featured-articles').find('a[href]').each((link) => {
-      cy.wrap(link)
-        .invoke('attr', 'href')
-        .then((result) => TEST_SUITE.push(result));
-    });
+    // Find featured articles section
+    cy.get('.featured-articles')
+      .find('a[href]') // Finds all links within section
+      .each((link) => {
+        cy.wrap(link)
+          .invoke('attr', 'href')
+          .then((result) => TEST_SUITE.add(result));
+      });
   });
 
-  it('Finds 6 "Featured articles" page links', () => {
-    expect(TEST_SUITE.length).to.eq(6);
+  it(`Finds ${EXPECTED_ARTICLES} "Featured articles" page links`, () => {
+    expect(TEST_SUITE.size).to.eq(EXPECTED_ARTICLES);
   })
 
   it('Response code successful for each link', () => {
@@ -24,4 +28,7 @@ describe('Tests "Featured articles" section links', () => {
     });
   });
 
+  afterEach('Clear test links', () => {
+    TEST_SUITE.clear();
+  })
 });

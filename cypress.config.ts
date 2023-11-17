@@ -5,8 +5,7 @@ export default defineConfig({
   
   e2e: {
     baseUrl: "https://developer.mozilla.org",
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+    viewportHeight: 1280,
+    viewportWidth: 720,
   },
 });
