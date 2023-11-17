@@ -6,7 +6,7 @@ const terminalLogOptions = {
 };
 
 /**
- * Installs the cypress-terminal-report plugin
+ * Installs cypress plugins
  * @param {Function} on Cypress's plugin interface
  */
  module.exports = (on: unknown) => {
