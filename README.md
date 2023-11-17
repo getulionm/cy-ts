@@ -18,7 +18,7 @@ Classes are created to represent a page, or a component in a page.
 Page-objects contain the following structure:
 1. Properties. (url, title)
 2. HTMLElement getters for this page. Getters must return the HTMLElement to allow for [action chaining](https://docs.cypress.io/guides/core-concepts/introduction-to-cypress#Chains-of-Commands).
-3. Page-actions: Reusable functions that contains a grouping of actions in this specific page. Example: [loginAs](https://github.com/getulionm/cy-ts/commit/9fbbab48effbd43be5038cfa8f3b32b411ae99e2#diff-1fa596491f5b74421a3f130f8f868f0eec754d138d79a15d93ff6af0949e62fdR20-R25) function
+3. Page-actions: Reusable functions that contains a grouping of actions in this specific page.
 
 ---
 ## Installation and execution:
